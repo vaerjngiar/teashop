@@ -10,6 +10,42 @@ from .forms import OrderCreateForm
 from .tasks import order_created
 from cart.cart import Cart
 
+from django.views.generic import View
+
+
+class OrderCreate(View):
+
+    def get(self, request):
+        template_name = 'orders/order/create.html'
+        form = OrderCreateForm()
+        cart = Cart(request)
+
+        ctx = {
+            'cart': cart,
+            'form': form,
+        }
+
+        return render(request, template_name, ctx)
+
+    def post(self, request):
+        cart = Cart(request)
+        form = OrderCreateForm(request.POST)
+        if form.is_valid():
+            order = form.save()
+            for item in cart:
+                OrderItem.objects.create(order=order,
+                                         product=item['product'],
+                                         price=item['price'],
+                                         quantity=item['quantity'])
+            # clear the cart
+            cart.clear()
+            # launch asynchronous task
+            order_created.delay(order.id)
+            # set the order in the session
+            request.session['order_id'] = order.id
+            # redirect to the payment
+            return redirect(reverse('payment:process'))
+
 
 def order_create(request):
     cart = Cart(request)
