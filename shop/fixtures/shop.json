@@ -1,0 +1,114 @@
+[
+{
+  "model": "shop.category",
+  "pk": 1,
+  "fields": {
+    "name": "Tea",
+    "slug": "tea"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 2,
+  "fields": {
+    "name": "Coffee",
+    "slug": "coffee"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "Green Tea",
+    "slug": "green-tea",
+    "image": "products/2017/07/17/tea2.jpeg",
+    "description": "",
+    "price": "5.00",
+    "stock": 3,
+    "available": true,
+    "created": "2017-07-17T05:56:27.716Z",
+    "updated": "2017-07-17T06:10:49.863Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "Ice Tea",
+    "slug": "ice-tea",
+    "image": "products/2017/07/17/icetea.jpeg",
+    "description": "",
+    "price": "8.75",
+    "stock": 5,
+    "available": true,
+    "created": "2017-07-17T05:57:47.642Z",
+    "updated": "2017-07-17T06:10:39.607Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 3,
+  "fields": {
+    "category": 2,
+    "name": "Coffee",
+    "slug": "coffee",
+    "image": "products/2017/07/17/coffee.jpeg",
+    "description": "",
+    "price": "12.00",
+    "stock": 6,
+    "available": true,
+    "created": "2017-07-17T05:58:21.251Z",
+    "updated": "2017-07-17T06:10:25.332Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "name": "Black Tea",
+    "slug": "black-tea",
+    "image": "",
+    "description": "",
+    "price": "0.50",
+    "stock": 6,
+    "available": true,
+    "created": "2017-07-18T13:52:07.631Z",
+    "updated": "2017-07-18T13:52:07.631Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 5,
+  "fields": {
+    "category": 1,
+    "name": "Red Tea",
+    "slug": "red-tea",
+    "image": "products/2017/07/19/red.jpg",
+    "description": "",
+    "price": "1.25",
+    "stock": 7,
+    "available": true,
+    "created": "2017-07-19T12:03:29.894Z",
+    "updated": "2017-07-19T12:03:29.894Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 6,
+  "fields": {
+    "category": 1,
+    "name": "Tea Powder",
+    "slug": "tea-powder",
+    "image": "products/2017/07/19/powder.jpeg",
+    "description": "",
+    "price": "4.28",
+    "stock": 9,
+    "available": true,
+    "created": "2017-07-19T12:04:00.936Z",
+    "updated": "2017-07-19T12:04:00.936Z"
+  }
+}
+]
