@@ -17,9 +17,16 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.views import login
+from django.contrib.auth.views import logout
+from accounts.views import UserRegistrationView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^new-user/$', UserRegistrationView.as_view(), name='user_registration'),
+    url(r'^login/$', login, {'template_name': 'login.html'}, name='login'),
+    url(r'^logout/$', logout, {'next_page': '/login/'}, name='logout'),
+
     url(r'^cart/', include('cart.urls', namespace='cart')),
     url(r'^orders/', include('orders.urls', namespace='orders')),
     url(r'^payment/', include('payment.urls', namespace='payment')),
